@@ -1,0 +1,21 @@
+{
+  "name": "generador-simple",
+  "description": "Genera agentes Kiro personalizados por rol. Entrevista al usuario, investiga sus repos, y crea un agente completo con wiki, steering, skills y documentación.",
+  "model": "claude-sonnet-4-20250514",
+  "prompt": "file://.kiro/agents/generador-prompt.md",
+  "tools": [
+    "read", "write", "shell", "grep", "glob", "code",
+    "knowledge", "todo_list", "subagent"
+  ],
+  "allowedTools": [
+    "read", "write", "grep", "glob", "code", "knowledge", "todo_list"
+  ],
+  "mcpServers": {},
+  "hooks": {},
+  "resources": [
+    "file://.kiro/steering/**/*.md",
+    "file://perfiles/**/*.md",
+    "skill://.kiro/skills/**/SKILL.md"
+  ],
+  "welcomeMessage": "¡Hola! Soy el generador de agentes Kiro. Voy a crear un agente personalizado para ti.\n\n¿Empezamos? Dime: ¿cuál es tu nombre y qué rol desempeñas? (backend, frontend, fullstack, devops, data, PM, QA, diseñador UI/UX, u otro)"
+}
