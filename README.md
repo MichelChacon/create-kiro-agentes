@@ -1,8 +1,27 @@
-# Kiro Agentes — Generador de Agentes por Rol
+# 🤖 Create Kiro Agentes
 
-Genera agentes Kiro personalizados para cualquier rol técnico. El agente generador te entrevista, investiga tus repos, y crea un compañero de trabajo adaptado a tu día a día.
+> **Generador automático de agentes Kiro personalizados por rol**
 
-## Roles soportados
+¿Cansado de configurar agentes desde cero? Este proyecto genera agentes Kiro completos y listos para usar en minutos. El agente generador te entrevista, investiga tus repos, y crea un compañero de trabajo adaptado a tu stack y flujo de trabajo.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Kiro CLI](https://img.shields.io/badge/Kiro%20CLI-2.2.1%2B-blue)](https://kiro.dev)
+[![Node.js](https://img.shields.io/badge/Node.js-22%2B-green)](https://nodejs.org)
+
+---
+
+## ✨ Características
+
+- 🎯 **8 roles predefinidos**: Backend, Frontend, Full Stack, DevOps, Data Engineer, Product Manager, QA, UI/UX
+- 🔍 **Investigación automática**: Lee tus repos para detectar el stack real
+- 📚 **Knowledge base completa**: Wiki estructurada con auto-indexing
+- 🛠️ **Skills específicos por rol**: Code review, deploy, testing, planning
+- 🔌 **MCP servers integrados**: Jira, AWS Docs, búsqueda web (Exa)
+- 🚀 **Listo en minutos**: Entrevista de 4 bloques y genera todo automáticamente
+
+---
+
+## 🎭 Roles Soportados
 
 | Rol | Archivo de perfil | Especialización |
 |-----|-------------------|-----------------|
@@ -36,14 +55,22 @@ Genera agentes Kiro personalizados para cualquier rol técnico. El agente genera
 3. **Generación**: Crea carpeta completa con .kiro/, wiki/, docs
 4. **Documento de uso**: Genera USO.md con comandos y casos de uso
 
-## Uso rápido
+## 🚀 Inicio Rápido
 
 ```powershell
-cd C:\Users\TU_USUARIO\Projects\kiro-agentes
+# 1. Clonar el repositorio
+git clone https://github.com/MichelChacon/create-kiro-agentes.git
+cd create-kiro-agentes
+
+# 2. Configurar variables de entorno (opcional)
+cp .env.example .env
+# Editar .env con tus tokens de Jira, Exa, etc.
+
+# 3. Iniciar el generador
 kiro-cli chat --agent generador
 ```
 
-El agente te saluda y empieza la entrevista. Al terminar, tendrás:
+El agente te saluda y empieza la entrevista. Al terminar, tendrás un agente completo en:
 
 ```
 C:\Users\TU_USUARIO\Projects\agente-{rol}-{nombre}\
@@ -53,6 +80,8 @@ C:\Users\TU_USUARIO\Projects\agente-{rol}-{nombre}\
 ├── INSTALACION.md  # Prerequisitos de tu stack
 └── USO.md          # Cómo usarlo día a día
 ```
+
+---
 
 ## Estructura del proyecto
 
@@ -74,7 +103,7 @@ kiro-agentes/
 └── INSTALACION.md                      # Prerequisitos
 ```
 
-## Qué incluye cada agente generado
+## 📦 Qué Incluye Cada Agente Generado
 
 ### Siempre (todos los roles):
 - Wiki con estructura completa (SCHEMA, index, log, carpetas)
@@ -91,7 +120,7 @@ kiro-agentes/
 - Steering adaptados (verification-checklist, error-patterns, domain-routing)
 - Wiki con contenido inicial relevante al rol
 
-## Prerequisitos
+## 🔧 Prerequisitos
 
 Ver [INSTALACION.md](INSTALACION.md) para la guía completa.
 
@@ -100,3 +129,39 @@ Mínimo:
 - Kiro CLI 2.2.1+
 - Node.js 22+
 - uv (para MCP servers Python)
+
+---
+
+## 📝 Licencia
+
+MIT License - Ver [LICENSE](LICENSE) para más detalles.
+
+---
+
+## 🤝 Contribuciones
+
+¿Tienes un perfil de rol que falta? ¿Mejoras al generador? ¡Pull requests bienvenidos!
+
+1. Fork el proyecto
+2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la branch (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+---
+
+## 👤 Autor
+
+**Michel Espinoza**
+- GitHub: [@MichelChacon](https://github.com/MichelChacon)
+- Email: michelesp1981@gmail.com
+
+---
+
+## ⭐ ¿Te gustó?
+
+Si este proyecto te ayudó, dale una ⭐ en GitHub!
+
+---
+
+**Hecho con ❤️ para la comunidad Kiro**
