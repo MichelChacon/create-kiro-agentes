@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Bloquear comandos destructivos",
+  "description": "Intercepta comandos shell peligrosos ANTES de ejecutarse. Pide autorizacion explicita del usuario.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": ["shell"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "REVISA el comando. Si contiene alguno de estos patrones, DETENERSE y pedir autorizacion:\n\nBLOQUEADOS: git commit, git push, git add, git reset, git rebase, git merge, git checkout -b, aws s3 rm, aws s3 rb, aws dynamodb delete/put/update-item, aws glue delete-table/database, aws stepfunctions stop/delete, aws dms stop/delete, aws codebuild stop-build, DROP TABLE, DROP DATABASE, DELETE FROM, TRUNCATE, INSERT INTO, UPDATE SET.\n\nSi coincide: 'BLOQUEADO: [comando]. Requiere autorizacion. Responde autorizo para proceder.'\n\nSi es SOLO LECTURA (ls, cat, get, describe, list, select, show, Get-ChildItem, Get-Content): permitir sin bloquear."
+  }
+}

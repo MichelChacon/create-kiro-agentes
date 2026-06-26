@@ -1,4 +1,4 @@
----
+﻿---
 rol: devops
 especialización: AWS (CDK, SAM, CloudFormation, CodePipeline, ECS, EKS)
 ---
@@ -27,7 +27,7 @@ CI/CD, monitoreo, observabilidad, seguridad cloud, cost optimization.
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets, tablero |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 | aws-documentation | Sí | Docs oficiales |
 
 ## Tools (allowedTools)

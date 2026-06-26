@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Proteger configuracion del agente",
+  "description": "Bloquea escrituras a .kiro/steering/, .kiro/skills/ y .kiro/agents/ sin aprobacion explicita.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": ["write"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "REVISA la ruta del archivo a escribir. Si contiene '.kiro/steering/', '.kiro/skills/' o '.kiro/agents/', DETENERSE y pedir aprobacion.\n\nEsas carpetas son la configuracion central del agente. Modificarlas puede cambiar su comportamiento de forma inesperada.\n\nSi la ruta contiene esos patrones: 'ATENCION: Vas a modificar configuracion del agente en [ruta]. Confirmas? (responde si para proceder)'\n\nSi es codigo normal (src/, lib/, tests/, etc.): permitir sin bloquear."
+  }
+}

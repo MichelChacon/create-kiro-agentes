@@ -1,4 +1,4 @@
----
+﻿---
 rol: backend
 especialización: AWS (Lambda, DynamoDB, Step Functions, AppSync, SAM)
 ---
@@ -27,7 +27,7 @@ Pero no se limita a AWS — puede trabajar con cualquier backend (Node.js, Pytho
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets, tablero |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 | aws-documentation | Si usa AWS | Docs oficiales |
 | dynamodb-modeling | Si usa DynamoDB | Modelado de datos |
 

@@ -1,4 +1,4 @@
----
+﻿---
 rol: frontend
 especialización: Angular (Material, RxJS, NgRx, SSR)
 ---
@@ -27,7 +27,7 @@ Pero no se limita a Angular — puede trabajar con React, Vue, Svelte, o cualqui
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets, tablero |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 
 ## Tools (allowedTools)
 ```json

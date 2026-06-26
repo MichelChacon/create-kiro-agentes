@@ -1,8 +1,14 @@
-# Guía de Instalación — Kiro Agentes
+﻿# Instalacion — Kiro Agentes para AWS
 
-Prerequisitos para usar el generador de agentes.
+Prerequisitos para usar el generador de agentes Kiro.
 
-**Sistema operativo**: Windows 11
+---
+
+## Sistema operativo
+
+Compatible con Windows, macOS y Linux.
+
+Los scripts de la plantilla son PowerShell (.ps1). Si usas macOS o Linux, necesitas PowerShell instalado (ver abajo) o el agente generado adaptara los scripts segun tu OS.
 
 ---
 
@@ -11,13 +17,13 @@ Prerequisitos para usar el generador de agentes.
 ### 1. Kiro CLI
 
 ```powershell
-# Instalar
-curl -fsSL https://cli.kiro.dev/install | bash
-
-# Verificar
 kiro-cli --version   # debe ser 2.2.1+
+```
 
-# Autenticarse
+Descarga desde https://kiro.dev/downloads/
+
+Autenticarse:
+```powershell
 kiro-cli auth login
 ```
 
@@ -25,86 +31,113 @@ kiro-cli auth login
 
 ```powershell
 node --version   # debe ser v22.x o superior
-# Instalar desde https://nodejs.org/ (LTS)
 ```
 
-### 3. Python + uv
+Descarga desde https://nodejs.org/ (LTS)
 
-```powershell
-# Instalar uv
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# Verificar
-uv --version   # debe ser 0.8+
-```
-
-### 4. Git
+### 3. Git
 
 ```powershell
 git --version
 ```
 
----
+### 4. AWS CLI v2
 
-## Prerequisitos opcionales (según tu rol)
-
-> Todas las variables de entorno están documentadas en [`.env.example`](.env.example).
-
-### Si usas AWS (backend, devops, data)
+El generador usa servicios y documentacion AWS. Requiere AWS CLI configurado.
 
 ```powershell
-# AWS CLI v2
 aws --version
 
-# Configurar SSO
+# SSO (recomendado para empresas)
 aws configure sso --profile tu-perfil
+
+# O con credenciales directas
+aws configure
 ```
 
-### Si usas Jira (casi todos)
+Descarga desde https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-Necesitas un API Token:
-1. Ve a https://id.atlassian.com/manage-profile/security/api-tokens
-2. Crea un nuevo token
+---
 
-Configura en tu `$PROFILE` de PowerShell:
+## Prerequisitos opcionales
+
+### uv (para MCP servers Python)
+
+Solo necesario si el agente generado usara MCP servers Python.
+
+**Windows:**
 ```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+uv --version   # debe ser 0.4+
+```
+
+**macOS/Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### PowerShell en macOS/Linux
+
+Si quieres usar los scripts de la plantilla en macOS o Linux:
+
+```bash
+# macOS
+brew install powershell
+
+# Ubuntu/Debian
+sudo apt-get install -y powershell
+```
+
+### Jira / gestor de tickets (opcional)
+
+Si usas Jira, el agente generado necesita un API Token:
+1. Ve a https://id.atlassian.com/manage-profile/security/api-tokens
+2. Crea un token
+3. Configura en tu entorno:
+
+```powershell
+# Windows - agregar a tu $PROFILE
 $env:JIRA_URL = "https://tu-instancia.atlassian.net"
 $env:JIRA_USERNAME = "tu.email@empresa.com"
 $env:JIRA_API_TOKEN = "tu-api-token"
 ```
 
-### Búsqueda web (Exa) — recomendado para todos
-
-1. Registrarte en https://exa.ai
-2. Obtener API key
-3. Agregar a `$PROFILE`:
-```powershell
-$env:EXA_API_KEY = "tu-exa-api-key"
+```bash
+# macOS/Linux - agregar a .bashrc o .zshrc
+export JIRA_URL="https://tu-instancia.atlassian.net"
+export JIRA_USERNAME="tu.email@empresa.com"
+export JIRA_API_TOKEN="tu-api-token"
 ```
-
-### Obsidian (opcional, como viewer de wiki)
-
-Descargar desde https://obsidian.md — útil para visualizar la wiki con graph view.
 
 ---
 
 ## Iniciar el generador
 
 ```powershell
+# Windows
 cd C:\Users\TU_USUARIO\Projects\kiro-agentes
+kiro-cli chat --agent generador
+
+# macOS/Linux
+cd ~/Projects/kiro-agentes
 kiro-cli chat --agent generador
 ```
 
-El agente te guiará desde ahí.
+El agente te guia con el cuestionario de configuracion.
 
 ---
 
-## Después de generar tu agente
+## Despues de generar tu agente
 
-El agente generado incluye su propio `INSTALACION.md` con los prerequisitos específicos de tu stack. Sigue esas instrucciones para configurar los MCP servers que necesites.
+El agente generado incluye su propio `INSTALACION.md` con los prerequisitos especificos de tu stack.
 
-Para iniciar tu agente:
+Para iniciarlo:
 ```powershell
+# Windows
 cd C:\Users\TU_USUARIO\Projects\agente-{rol}-{nombre}
+kiro-cli chat --agent {rol}
+
+# macOS/Linux
+cd ~/Projects/agente-{rol}-{nombre}
 kiro-cli chat --agent {rol}
 ```

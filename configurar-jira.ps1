@@ -5,9 +5,9 @@ Write-Host "Configurando Jira para Kiro Agentes..." -ForegroundColor Cyan
 Write-Host ""
 
 # Variables de configuracion
-$JIRA_URL = "https://defontana.atlassian.net"
-$JIRA_USERNAME = "mespinoza@defontana.com"
-$JIRA_API_TOKEN = "ATATT3xFfGF0kE3Gr53mXO7cOeYzc2QrsGdN5Jr0mv50doi3UhMtM81gDlx_XfGwWqLtCdf7E-9Qkf7J302oukMj9pDiKAmYxqRJwVQC7d1VQYWeboWZi7Qg4_9PBt4ivAxpTJHeLZaa7OLzl_HOTxkNjV7oQdEQkQgWXlA0pwPwxmfDJslvt90=6F325769"
+$JIRA_URL = "https://tu-empresa.atlassian.net"
+$JIRA_USERNAME = "tu-email@empresa.com"
+$JIRA_API_TOKEN = "TU_JIRA_API_TOKEN_AQUI"
 
 # Configuracion de uv (necesario para MCP servers)
 $UV_PATH = "C:\Users\mespinoza\.local\bin"

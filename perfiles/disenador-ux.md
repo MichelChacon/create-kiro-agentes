@@ -1,4 +1,4 @@
----
+﻿---
 rol: disenador-ux
 especialización: Diseño de interfaces, UX research, design systems, handoff
 ---
@@ -28,7 +28,7 @@ Trabaja con Figma, design tokens, y hace handoff a desarrolladores.
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets de diseño |
-| exa (búsqueda web) | Sí | Inspiración, benchmarks, tendencias |
+| AWS Docs (búsqueda web) | Sí | Inspiración, benchmarks, tendencias |
 
 ## Tools (allowedTools)
 ```json

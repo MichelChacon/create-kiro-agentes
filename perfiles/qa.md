@@ -1,4 +1,4 @@
----
+﻿---
 rol: qa
 especialización: Testing manual y automatizado, calidad de software
 ---
@@ -28,7 +28,7 @@ testing de APIs, performance testing, test planning.
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Sí | Tickets, bugs, test cases |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 
 ## Tools (allowedTools)
 ```json

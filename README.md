@@ -1,4 +1,4 @@
-# 🤖 Create Kiro Agentes
+﻿# 🤖 Create Kiro Agentes
 
 > **Generador automático de agentes Kiro personalizados por rol**
 
@@ -16,7 +16,7 @@
 - 🔍 **Investigación automática**: Lee tus repos para detectar el stack real
 - 📚 **Knowledge base completa**: Wiki estructurada con auto-indexing
 - 🛠️ **Skills específicos por rol**: Code review, deploy, testing, planning
-- 🔌 **MCP servers integrados**: Jira, AWS Docs, búsqueda web (Exa)
+- 🔌 **MCP servers integrados**: Jira, AWS Docs, búsqueda web (AWS Documentation)
 - 🚀 **Listo en minutos**: Entrevista de 4 bloques y genera todo automáticamente
 
 ---
@@ -64,7 +64,7 @@ cd create-kiro-agentes
 
 # 2. Configurar variables de entorno (opcional)
 cp .env.example .env
-# Editar .env con tus tokens de Jira, Exa, etc.
+# Editar .env con tus tokens de Jira, AWS Docs, etc.
 
 # 3. Iniciar el generador
 kiro-cli chat --agent generador
@@ -112,7 +112,7 @@ kiro-agentes/
 - Scripts: gitflow.ps1, gitflow-finish.ps1
 - Hooks: prompt-context.ps1 (continuidad entre sesiones)
 - Knowledge base con auto-indexing de wiki/
-- Búsqueda web (Exa)
+- Búsqueda web (AWS Documentation)
 
 ### Según el rol:
 - Skills específicos (investigate-ticket, deploy, code-review, test-plan, etc.)
@@ -125,16 +125,16 @@ kiro-agentes/
 Ver [INSTALACION.md](INSTALACION.md) para la guía completa.
 
 Mínimo:
-- Windows 11
+- Windows, macOS o Linux
 - Kiro CLI 2.2.1+
 - Node.js 22+
-- uv (para MCP servers Python)
+- AWS CLI v2
 
 ---
 
 ## 📝 Licencia
 
-MIT License - Ver [LICENSE](LICENSE) para más detalles.
+MIT License
 
 ---
 
@@ -152,7 +152,7 @@ MIT License - Ver [LICENSE](LICENSE) para más detalles.
 
 ## 👤 Autor
 
-**Michel Espinoza**
+**Michael Espinoza D.**
 - GitHub: [@MichelChacon](https://github.com/MichelChacon)
 - Email: michelesp1981@gmail.com
 

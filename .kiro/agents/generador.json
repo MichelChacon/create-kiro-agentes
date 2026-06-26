@@ -1,32 +1,43 @@
-{
+﻿{
   "name": "generador",
-  "description": "Genera agentes Kiro personalizados por rol. Entrevista al usuario, investiga sus repos, y crea un agente completo con wiki, steering, skills y documentación.",
-  "model": "claude-sonnet-4-20250514",
+  "description": "Genera agentes Kiro personalizados para profesionales que trabajan en AWS. Entrevista al usuario, investiga sus repos, selecciona el modelo optimo, y crea un agente completo con wiki, steering, skills y documentacion.",
+  "model": "claude-sonnet-4-5",
   "prompt": "file://.kiro/agents/generador-prompt.md",
-  "tools": [
+  "allowedTools": [
     "read", "write", "shell", "grep", "glob", "code",
     "knowledge", "todo_list", "subagent",
-    "@exa"
-  ],
-  "allowedTools": [
-    "read", "write", "grep", "glob", "code", "knowledge", "todo_list",
-    "@exa/web_search_exa",
-    "@exa/web_fetch_exa"
+    "@aws",
+    "@aws-documentation"
   ],
   "mcpServers": {
-    "exa": {
-      "command": "node",
-      "args": ["exa-mcp-server.js"],
-      "env": {
-        "EXA_API_KEY": "${EXA_API_KEY}"
-      }
+    "aws": {
+      "command": "uvx",
+      "args": ["mcp-proxy-for-aws@1.6.2", "https://aws-mcp.us-east-1.api.aws/mcp", "--metadata", "AWS_REGION=us-east-1"],
+      "timeout": 100000
+    },
+    "aws-documentation": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {"FASTMCP_LOG_LEVEL": "ERROR"}
     }
   },
-  "hooks": {},
+  "hooks": {
+    "userPromptSubmit": [
+      {
+        "command": ".kiro/hooks/git-context.ps1",
+        "description": "Inject git status and recent commits into context"
+      }
+    ],
+    "stop": [
+      {
+        "command": ".kiro/hooks/flywheel-log.ps1",
+        "description": "Log turn summary for flywheel analysis"
+      }
+    ]
+  },
   "resources": [
     "file://.kiro/steering/**/*.md",
     "file://perfiles/**/*.md",
     "skill://.kiro/skills/**/SKILL.md"
-  ],
-  "welcomeMessage": "¡Hola! Soy el generador de agentes Kiro. Voy a crear un agente personalizado para ti.\n\n¿Empezamos? Dime: ¿cuál es tu nombre y qué rol desempeñas? (backend, frontend, fullstack, devops, data, PM, QA, diseñador UI/UX, u otro)"
+  ]
 }

@@ -1,4 +1,4 @@
----
+﻿---
 rol: product-manager
 especialización: Gestión de producto, specs, priorización, métricas
 ---
@@ -28,7 +28,7 @@ Trabaja con equipos técnicos pero no escribe código directamente.
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Sí | Gestión de backlog, epics, sprints |
-| exa (búsqueda web) | Sí | Investigación de mercado, benchmarks |
+| AWS Docs (búsqueda web) | Sí | Investigación de mercado, benchmarks |
 
 ## Tools (allowedTools)
 ```json

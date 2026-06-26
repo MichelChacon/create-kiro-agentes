@@ -1,4 +1,4 @@
----
+﻿---
 rol: data
 especialización: Pipelines de datos, ETL, warehouses, analytics
 ---
@@ -27,7 +27,7 @@ Puede usar AWS (Glue, Athena, Redshift, Kinesis, Step Functions), Spark, dbt, Ai
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets, tablero |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 | aws-documentation | Si usa AWS | Docs oficiales |
 
 ## Tools (allowedTools)

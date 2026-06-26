@@ -1,4 +1,4 @@
----
+﻿---
 rol: fullstack
 especialización: Frontend (Angular/React) + Backend (Node.js/Python) + DevOps básico (CI/CD, cloud)
 ---
@@ -26,7 +26,7 @@ y operaciones básicas (CI/CD, deploy, monitoreo). Jack of all trades con profun
 | MCP | Obligatorio | Notas |
 |-----|-------------|-------|
 | mcp-atlassian (Jira) | Si usa Jira | Tickets, tablero |
-| exa (búsqueda web) | Sí | Universal |
+| AWS Docs (búsqueda web) | Sí | Universal |
 | aws-documentation | Si usa AWS | Docs oficiales |
 
 ## Tools (allowedTools)

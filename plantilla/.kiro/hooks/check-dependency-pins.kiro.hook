@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Verificar versiones pineadas",
+  "description": "Detecta dependencias con rangos abiertos (^, ~, >=, *) en package.json, requirements.txt, etc. Importante para reproducibilidad en proyectos AWS.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": ["write"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "REVISA el contenido y ruta del archivo a escribir. Si es archivo de dependencias (package.json, requirements.txt, pyproject.toml, pom.xml, build.gradle, go.mod) Y tiene versiones con rangos abiertos (^1.0, ~2.0, >=3.0, *, latest), ALERTAR.\n\nVersiones que deben fijarse: '^1.2.3' usar '1.2.3', '~2.0' usar '2.0.0', '*' o 'latest' siempre problematico.\n\nSi detectas rangos abiertos: 'ATENCION: El archivo tiene dependencias no pineadas: [lista]. Versiones flotantes causan builds no reproducibles. Quieres fijar antes de escribir?'\n\nSi versiones exactas o no es archivo de dependencias: permitir sin bloquear."
+  }
+}

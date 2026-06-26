@@ -1,22 +1,34 @@
-# Script para iniciar el generador de agentes Kiro
-# Version simplificada sin MCP servers externos
+﻿# iniciar-generador.ps1
+# Script para iniciar el generador de agentes Kiro para AWS
+# Uso: .\iniciar-generador.ps1
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  Iniciando Generador de Agentes Kiro" -ForegroundColor Green
+Write-Host "  Generador de Agentes Kiro para AWS" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Cargar variables de entorno
-$env:JIRA_URL = "https://defontana.atlassian.net"
-$env:JIRA_USERNAME = "mespinoza@defontana.com"
-$env:JIRA_API_TOKEN = "ATATT3xFfGF0kE3Gr53mXO7cOeYzc2QrsGdN5Jr0mv50doi3UhMtM81gDlx_XfGwWqLtCdf7E-9Qkf7J302oukMj9pDiKAmYxqRJwVQC7d1VQYWeboWZi7Qg4_9PBt4ivAxpTJHeLZaa7OLzl_HOTxkNjV7oQdEQkQgWXlA0pwPwxmfDJslvt90=6F325769"
-$env:EXA_API_KEY = "e72c9867-d442-4fec-9952-e33a5bdb7587"
-$env:Path = "C:\Users\mespinoza\.local\bin;$env:Path"
+# Verificar que kiro-cli esta instalado
+if (-not (Get-Command kiro-cli -ErrorAction SilentlyContinue)) {
+    Write-Host "[ERROR] kiro-cli no esta instalado." -ForegroundColor Red
+    Write-Host "Instala desde: https://kiro.dev/downloads/" -ForegroundColor Yellow
+    exit 1
+}
 
-Write-Host "Variables de entorno cargadas" -ForegroundColor Green
+# Verificar AWS CLI
+if (-not (Get-Command aws -ErrorAction SilentlyContinue)) {
+    Write-Host "[WARN] AWS CLI no encontrado. Algunos MCP servers no funcionaran." -ForegroundColor Yellow
+    Write-Host "Instala desde: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" -ForegroundColor Yellow
+    Write-Host ""
+}
+
+# Variables de entorno opcionales - configurar si las tienes
+# $env:JIRA_URL = "https://tu-instancia.atlassian.net"
+# $env:JIRA_USERNAME = "tu.email@empresa.com"
+# $env:JIRA_API_TOKEN = "tu-api-token"
+
+Write-Host "[OK] Iniciando agente generador..." -ForegroundColor Green
 Write-Host ""
-Write-Host "Iniciando agente generador-simple (sin MCP externo)..." -ForegroundColor Yellow
+Write-Host "El agente te guiara con el cuestionario de configuracion."
 Write-Host ""
 
-# Iniciar Kiro con el agente simplificado
-kiro-cli chat --agent generador-simple
+kiro-cli chat --agent generador
