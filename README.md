@@ -62,10 +62,6 @@
 git clone https://github.com/MichelChacon/create-kiro-agentes.git
 cd create-kiro-agentes
 
-# 2. Configurar variables de entorno (opcional)
-cp .env.example .env
-# Editar .env con tus tokens de Jira, AWS Docs, etc.
-
 # 3. Iniciar el generador
 kiro-cli chat --agent generador
 ```
@@ -86,7 +82,7 @@ C:\Users\TU_USUARIO\Projects\agente-{rol}-{nombre}\
 ## Estructura del proyecto
 
 ```
-kiro-agentes/
+create-kiro-agentes/
 ├── .kiro/
 │   ├── agents/generador.json           # Agente generador
 │   ├── skills/crear-agente/SKILL.md    # Skill de onboarding
@@ -98,7 +94,6 @@ kiro-agentes/
 │   ├── .kiro/hooks/                    # prompt-context.ps1
 │   └── wiki/SCHEMA.md                  # Schema de wiki
 ├── perfiles/                           # Guías por rol (8 perfiles)
-├── .env.example                        # Variables de entorno necesarias
 ├── README.md                           # Este archivo
 └── INSTALACION.md                      # Prerequisitos
 ```
