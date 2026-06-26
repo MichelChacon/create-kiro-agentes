@@ -1,4 +1,4 @@
----
+﻿---
 name: crear-agente
 description: Crear un agente Kiro personalizado por rol. Activar cuando el usuario diga "quiero crear mi agente", "crear agente", "generar agente", "empezar", o al inicio de la conversación.
 ---
@@ -102,10 +102,10 @@ Para cada repo que el usuario proporcionó:
 4. **Estructura**: `read` con mode Directory, depth 2
 5. **Documentación proporcionada**:
    - Rutas locales: verificar existencia, leer estructura, extraer contenido clave
-   - URLs: intentar leer con `web_fetch_exa`, extraer estructura y temas principales
+   - URLs: intentar leer con `web_fetch`, extraer estructura y temas principales
    - Clasificar: ¿es referencia de API? ¿arquitectura? ¿procesos? ¿decisiones?
 
-Si necesita info del stack que no conoce → buscar con `web_search_exa`.
+Si necesita info del stack que no conoce → buscar con `@aws-documentation`.
 
 ---
 
@@ -230,7 +230,7 @@ Presentar al usuario:
 | `write` | Crear todos los archivos del agente |
 | `glob` | Explorar estructura de repos |
 | `grep` | Buscar patterns en repos |
-| `web_search_exa` | Buscar mejores prácticas del stack |
+| `@aws-documentation` | Buscar mejores prácticas del stack |
 | `knowledge` | Consultar perfiles de rol |
 | `todo_list` | Trackear progreso de generación |
 
@@ -238,7 +238,7 @@ Presentar al usuario:
 
 1. **No generar sin entrevista completa** — Mínimo: nombre, rol, stack, 1 repo
 2. **Naming**: `{rol}.json`, `{rol}-prompt.md` — SIN "-engineer"
-3. **Solo Windows** — Hooks en .ps1, rutas con backslash
+3. **Windows por defecto. Si el usuario usa Linux/Mac, adaptar rutas y scripts** — Hooks en .ps1, rutas con backslash
 4. **Leer perfil antes de generar** — `perfiles/{rol}.md` tiene la guía
 5. **Output autónomo** — El agente generado no depende de kiro-agentes/
 6. **USO.md obligatorio** — Es el onboarding del usuario con su agente
